@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hide {
+    height: 100vh; /* Высота на весь экран */
+    background-color: black;
+}
+
+.hide-img {
+    background: url("../img/main/large.jpg") no-repeat center center;
+    background-size: cover; /* Картинка будет адаптироваться под размер экрана */
+    width: 100%;
+    height: 100%;
+    position: relative; /* Относительное позиционирование для абсолютных слоев */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hide-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5; /* Прозрачность на 50% */
+    z-index: 1; /* Этот слой будет позади текста */
+}
+
+.hide-zagal {
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2; /* Текст будет над полупрозрачным слоем */
+    text-align: center;
+}
+
+.hide-zagal h1 {
+    font-size: 58px;
+    margin-bottom: 30px;
+}
+
+.hide-zagal h2 {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.hide-btn {
+    z-index: 2; /* Кнопка тоже над прозрачным слоем */
+}
+
+.hide-btn button {
+    width: 300px;
+    height: 50px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hide-btn button:hover {
+    background-color: #ff4500; /* Темнее при наведении */
+}
+
+/* NEWS */
+
+/* Основной стиль для раздела новостей */
+.news-main {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.news-title h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Контейнер для всех новостей */
+.news-bloks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.one-news {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.one-news:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображение в новостях */
+.one-img img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Текст новостей */
+.one-txt {
+    padding: 15px;
+}
+
+.one-txt h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.one-txt p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+/* Контейнер для кнопки "Посмотреть все новости" */
+.view-all-news {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-view-all {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-all:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* CHAMPION */
+.champ {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.champ-zagal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.champ-zagal h2 {
+    font-weight: 200;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+.champ-zagal h1 {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.champ-block {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.champ-block button {
+    border: none;
+    background-color: rgb(255, 255, 255);
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.champ-block button:hover {
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgba(240, 248, 255, 0.8); /* Полупрозрачный фон при наведении */
+    transform: scale(1.1); 
+}
+
+.champ-block img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.champ-epl, .champ-laliga, .champ-serie, .champ-lc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.view-all-champs {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-view-all {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-view-all:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* LIGA CHAMPION */
+.main-lc {
+    position: relative; /* Для позиционирования дочерних элементов */
+    height: 600px; /* Высота всего блока */
+    width: 100%; /* Ширина всего блока */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.lc-img {
+    background: url(../img/main/liga.jpg); /* Добавь свое изображение здесь */
+    background-size: cover;
+    background-position: center;
+    height: 100%; /* Заполнение всей высоты */
+    width: 100%; /* Заполнение всей ширины */
+    background-color: #333; /* Цвет фона на случай, если изображение не загрузится */
+}
+
+.lc-txt {
+    position: absolute; /* Позволяет располагать текст поверх изображения */
+    top: 50%; /* Сместить текст по вертикали на 50% высоты блока */
+    left: 150px; /* Отступ слева */
+    transform: translateY(-50%); /* Корректировка для точного центрирования по вертикали */
+    color: white; /* Цвет текста */
+    z-index: 1; /* Обеспечивает, чтобы текст был поверх изображения */
+    width: 500px; /* Ширина текстового блока */
+}
+
+.lc-txt h2 {
+    font-size: 28px; /* Размер заголовка */
+    margin-bottom: 10px; /* Отступ снизу для заголовка */
+}
+
+.lc-txt p {
+    font-size: 16px; /* Размер текста */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    word-spacing: 5px;
+    line-height: 25px;
+}
+/* Стили для кнопки "Подробнее" */
+.btn-more {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #5fb7ff, #5969ff); /* Градиентный фон */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 30px; /* Округлённые края */
+    transition: all 0.3s ease; /* Плавный переход для анимации */
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.btn-more:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный эффект при наведении */
+    transition: all 0.4s ease;
+}
+
+.btn-more:hover:before {
+    left: 100%; /* Эффект скольжения света по кнопке при наведении */
+}
+
+.btn-more:hover {
+    transform: scale(1.05); /* Легкое увеличение кнопки при наведении */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Тень для эффекта глубины */
+}
+
+
+/* Стили для блока страниц */
+.pages-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    grid-template-rows: repeat(2, auto); /* Два ряда */
+    gap: 20px; /* Отступы между карточками */
+    margin: 50px 0;
+    padding: 0 20px;
+}
+
+.page-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.page-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.page-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.page-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.page-info h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.page-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Медиазапрос для уменьшения количества колонок на мобильных устройствах */
+@media (max-width: 768px) {
+    .pages-block {
+        grid-template-columns: repeat(2, 1fr); /* Две колонки для средних экранов */
+    }
+}
+
+@media (max-width: 391px) {
+    .pages-block {
+        grid-template-columns: 1fr; /* Одна колонка для маленьких экранов */
+    }
+
+    .page-card img {
+        height: 150px;
+    }
+
+    .page-info h3 {
+        font-size: 18px;
+    }
+
+    .page-info p {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-block {
+    width: 90%; /* Ограничиваем ширину, чтобы оставить отступы по краям */
+    display: flex;
+    justify-content: space-between; /* Разделяем на три части: слева, центр, справа */
+    align-items: center;
+}
+
+.football-name {
+    flex: 1; /* Слева */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.copyright {
+    flex: 1; /* По центру */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social {
+    flex: 1; /* Справа */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-txt p {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.footer-social img {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 10px; /* Отступы между иконками */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+}
+
+.footer-social img:hover {
+    transform: scale(1.1); /* Увеличение иконки на 10% при наведении */
+}
+
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 391px) {
+    .news-bloks {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .one-news {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* Адаптивка */
+@media only screen and (max-width: 391px) {
+    .champ-block {
+        display: flex;
+        flex-direction: column; /* Вертикальное выравнивание для мобильных */
+        margin-bottom: 50px;
+    }
+    
+    .champ-block img {
+        width: 80%; /* Адаптируем ширину изображений */
+        height: auto; /* Высота автоматически пропорциональна */
+    }
+
+    .champ-block button {
+        width: 100%; /* Кнопки занимают всю ширину */
+    }
+
+    .champ-zagal h1 {
+        font-size: 50px; /* Уменьшаем размер заголовка */
+    }
+
+    .champ-zagal h2 {
+        font-size: 20px; /* Уменьшаем размер подзаголовка */
+    }
+    .champ-block p{
+        font-size: 20px;
+    }
+}

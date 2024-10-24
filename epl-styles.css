@@ -29,7 +29,7 @@ body, html {
 /* Псевдоэлемент для изображения с прозрачностью */
 .hide-img::before {
     content: '';
-    background: url("../img/epl/champion-city.jpg") no-repeat center center;
+    background: url("img/epl/champion-city.jpg") no-repeat center center;
     background-size: cover;
     position: absolute;
     top: 0;

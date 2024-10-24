@@ -13,7 +13,7 @@ body, html {
     position: relative;
     width: 100%;
     height: 100vh; /* Высота на весь экран */
-    background-image: url('../img/lc/lc.png');
+    background-image: url('img/lc/lc.png');
     background-size: cover; /* Фоновая картинка будет покрывать весь экран */
     background-position: center;
     display: flex;

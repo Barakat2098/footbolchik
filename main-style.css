@@ -510,8 +510,14 @@ body, html {
     }
 
     .lc-txt {
-        left: 20px; /* Уменьшаем отступ слева */
-        width: calc(100% - 40px); /* Ширина текстового блока с учетом отступов */
+        position: absolute;
+        top: 50%;
+        left: 50px;
+        right: 50px;
+        transform: translateY(-50%);
+        color: white;
+        z-index: 1;
+        width: 300px;
         text-align: center; /* Выравнивание текста по центру */
     }
 

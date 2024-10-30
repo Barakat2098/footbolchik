@@ -1,0 +1,7 @@
+User-agent: *
+
+Allow: /*.css # стили
+
+Allow: /*.js # скрипты
+
+itemap: http://www.sitemaps.org/schemas/sitemap/0.9 # путь к карте сайта

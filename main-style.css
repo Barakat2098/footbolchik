@@ -244,81 +244,73 @@ body, html {
 
 /* LIGA CHAMPION */
 .main-lc {
-    position: relative; /* Для позиционирования дочерних элементов */
-    height: 600px; /* Высота всего блока */
-    width: 100%; /* Ширина всего блока */
+    position: relative;
+    width: 100%;
+    height: 600px; /* Высота основного контейнера */
     margin-top: 50px;
     margin-bottom: 50px;
+    overflow: hidden;
 }
 
 .lc-img {
-    background: url(img/main/liga.jpg); /* Добавь свое изображение здесь */
-    background-size: cover;
-    background-position: center;
-    height: 100%; /* Заполнение всей высоты */
-    width: 100%; /* Заполнение всей ширины */
-    background-color: #333; /* Цвет фона на случай, если изображение не загрузится */
+    background-image: url('img/main/liga.jpg'); /* Убедитесь, что путь к изображению корректный */
+    background-size: cover; /* Картинка будет обрезана по краям для полного покрытия блока */
+    background-position: center; /* Центрируем изображение */
+    position: absolute; /* Для наложения на основное содержание */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
 }
 
 .lc-txt {
-    position: absolute; /* Позволяет располагать текст поверх изображения */
-    top: 50%; /* Сместить текст по вертикали на 50% высоты блока */
-    left: 150px; /* Отступ слева */
-    transform: translateY(-50%); /* Корректировка для точного центрирования по вертикали */
-    color: white; /* Цвет текста */
-    z-index: 1; /* Обеспечивает, чтобы текст был поверх изображения */
-    width: 500px; /* Ширина текстового блока */
+    position: relative; /* Относительное позиционирование для наложения поверх картинки */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Центрирование по всей высоте контейнера */
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
 }
 
 .lc-txt h2 {
-    font-size: 28px; /* Размер заголовка */
-    margin-bottom: 10px; /* Отступ снизу для заголовка */
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 .lc-txt p {
-    font-size: 16px; /* Размер текста */
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
     word-spacing: 5px;
     line-height: 25px;
 }
+
 /* Стили для кнопки "Подробнее" */
 .btn-more {
     display: inline-block;
     padding: 15px 30px;
-    background: linear-gradient(45deg, #5fb7ff, #5969ff); /* Градиентный фон */
+    background: linear-gradient(45deg, #5fb7ff, #5969ff);
     color: white;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 30px; /* Округлённые края */
-    transition: all 0.3s ease; /* Плавный переход для анимации */
-    position: relative;
-    overflow: hidden;
-    margin-top: 50px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
-.btn-more:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный эффект при наведении */
-    transition: all 0.4s ease;
-}
-
-.btn-more:hover:before {
-    left: 100%; /* Эффект скольжения света по кнопке при наведении */
-}
-
+/* Эффект при наведении на кнопку */
 .btn-more:hover {
-    transform: scale(1.05); /* Легкое увеличение кнопки при наведении */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Тень для эффекта глубины */
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Стили для блока страниц */
 .pages-block {
@@ -455,6 +447,8 @@ body, html {
     transform: scale(1.1); /* Увеличение иконки на 10% при наведении */
 }
 
+
+
 /* Контейнер для карты */
 .map-container {
     position: relative;
@@ -476,6 +470,11 @@ body, html {
     border: none;
 }
 
+
+
+
+
+
 /* Дополнительные стили для мобильных устройств */
 @media (max-width: 391px) {
     .map-container {
@@ -496,6 +495,32 @@ body, html {
         flex: 1 1 100%;
     }
 }
+
+
+
+/* Адаптивный стиль для экрана шириной до 391px */
+@media (max-width: 391px) {
+    .main-lc {
+        height: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .lc-txt h2 {
+        font-size: 20px;
+    }
+
+    .lc-txt p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .btn-more {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
 
 
 /* Адаптивка */
@@ -524,25 +549,5 @@ body, html {
     }
     .champ-block p{
         font-size: 20px;
-    }
-}
-
-@media (max-width: 391px) {
-    /* Адаптивные стили */
-    .main-lc {
-        height: auto;
-    }
-
-    .lc-txt h2 {
-        font-size: 20px; /* Ещё чуть меньше для заголовка */
-    }
-
-    .lc-txt p {
-        font-size: 13px;
-    }
-
-    .btn-more {
-        padding: 8px 16px; /* Ещё меньше для кнопки */
-        font-size: 13px;
     }
 }

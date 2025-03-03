@@ -1,7 +1,10 @@
 User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /*?sort=
+Disallow: /*?page=
 
-Allow: /*.css # стили
+Allow: /*.css
+Allow: /*.js
 
-Allow: /*.js # скрипты
-
-itemap: http://www.sitemaps.org/schemas/sitemap/0.9 # путь к карте сайта
+Sitemap: https://barakat2098.github.io/footbolchik/sitemap.xml
